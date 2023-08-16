@@ -18,8 +18,8 @@ y en el servidor poner esto de aqui abajo si no.no funciona
 app.use(cors({
     origin: "http://localhost:5173",
     credentials: true   
-  }));*/
-  
+  }));
+*/
 /* 
 app.get("/",(req,res)=>{
     const ip =req.headers['x-forwarded-for'] || req.connection.remoteAddress;
@@ -40,7 +40,7 @@ app.post("/data", (req, res) => {
     secure:true,
     auth:{
         user:"jayme35371@gmail.com",
-        pass:"jaime1020.desk"
+        pass:"lrcrfmyshztgpgus"
     }
   })
   const mensaje = {

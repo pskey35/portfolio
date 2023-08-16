@@ -2,11 +2,11 @@ const express = require("express");
 const app = express();
 const path = require("path")
 //const cors = require("cors");
-//const cookieParser = require("cookie-parser");
+const cookieParser = require("cookie-parser");
 const nodeMailer = require("nodemailer")
-//app.use(cookieParser());
-/*app.use(express.json());
-app.use(express.urlencoded({ extended: true }));*/
+app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //app.use(cors())
 /*aqui use el cors para que se pueda recibir cookies
@@ -29,7 +29,7 @@ app.get("/",(req,res)=>{
 
 app.use(express.static(path.join(__dirname, "/../public")));
 
-/*
+
 app.post("/data", (req, res) => {
   console.log(req.body)
   console.log(req.cookies)
@@ -60,5 +60,5 @@ app.post("/data", (req, res) => {
   //crear correctamente la cookie puede ser un res.send() o res.json()
 });
 
-*/
+
 module.exports = app;

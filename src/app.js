@@ -19,6 +19,7 @@ app.use(cors({
     origin: "http://localhost:5173",
     credentials: true   
   }));*/
+  
 /* 
 app.get("/",(req,res)=>{
     const ip =req.headers['x-forwarded-for'] || req.connection.remoteAddress;
@@ -52,7 +53,7 @@ app.post("/data", (req, res) => {
   transport.sendMail(mensaje,(err,info)=>{
     console.log(info)
     console.log(err)
-    res.json({error:err,info:info})
+    res.json({error:err,info:info,cookieRecibo:req.cookies})
   })
   //res.json({estado:"creado cookie correctamente"})
 

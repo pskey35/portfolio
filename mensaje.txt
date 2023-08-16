@@ -1,0 +1,3 @@
+no funcionaba aqui porque estaba mal el packagelock.json y package.json
+al ejecutar npm init y npm install salia asi los packages jsons.
+lo solucione porque copie de portafolio3/node/  su packages jsons

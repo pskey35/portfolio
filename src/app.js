@@ -5,8 +5,8 @@ const path = require("path")
 const cookieParser = require("cookie-parser");
 const nodeMailer = require("nodemailer")
 app.use(cookieParser());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+/*app.use(express.json());
+app.use(express.urlencoded({ extended: true }));*/
 
 //app.use(cors())
 /*aqui use el cors para que se pueda recibir cookies

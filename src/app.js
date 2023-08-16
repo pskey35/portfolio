@@ -24,7 +24,13 @@ app.get("/",(req,res)=>{
     res.send(`esta es tu ip: ${ip}`)
 })
 */
-app.use(express.static(path.join(__dirname, "/../public")));
+
+
+//app.use(express.static(path.join(__dirname, "/../public")));
+
+app.get("/",(req,res)=>{
+  res.send("pagina principal")
+})
 /*
 app.post("/data", (req, res) => {
   console.log(req.body)

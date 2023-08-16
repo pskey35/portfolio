@@ -25,9 +25,8 @@ app.get("/",(req,res)=>{
 })
 */
 app.use(express.static(path.join(__dirname, "/../public")));
+/*
 app.post("/data", (req, res) => {
-  //const a = req.body;
-  //res.cookie("mensajes","saludo")
   console.log(req.body)
   console.log(req.cookies)
   const transport = nodeMailer.createTransport({
@@ -49,12 +48,13 @@ app.post("/data", (req, res) => {
   transport.sendMail(mensaje,(err,info)=>{
     console.log(info)
     console.log(err)
+    res.json({error:err,info:info})
   })
-  res.json({estado:"creado cookie correctamente"})
+  //res.json({estado:"creado cookie correctamente"})
 
   //se tiene que enviar algo al cliente para que pueda 
   //crear correctamente la cookie puede ser un res.send() o res.json()
 });
 
-
+*/
 module.exports = app;

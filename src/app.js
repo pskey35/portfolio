@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path")
-const cors = require("cors");
+//const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const nodeMailer = require("nodemailer")
 app.use(cookieParser());
@@ -14,12 +14,12 @@ en el fetch agregar esto credentials: "include",
 y en el servidor poner esto de aqui abajo si no.no funciona
 */
 //el cors no funciona en vercel
-
+/*
 app.use(cors({
     origin: "http://localhost:5173",
     credentials: true   
   }));
-
+*/
 /* 
 app.get("/",(req,res)=>{
     const ip =req.headers['x-forwarded-for'] || req.connection.remoteAddress;

@@ -26,11 +26,8 @@ app.get("/",(req,res)=>{
 */
 
 
-//app.use(express.static(path.join(__dirname, "/../public")));
+app.use(express.static(path.join(__dirname, "/../public")));
 
-app.get("/",(req,res)=>{
-  res.send("pagina principal")
-})
 /*
 app.post("/data", (req, res) => {
   console.log(req.body)

@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path")
-//const cors = require("cors");
+const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const nodeMailer = require("nodemailer")
 app.use(cookieParser());
@@ -14,12 +14,12 @@ en el fetch agregar esto credentials: "include",
 y en el servidor poner esto de aqui abajo si no.no funciona
 */
 //el cors no funciona en vercel
-/*
+
 app.use(cors({
     origin: "http://localhost:5173",
     credentials: true   
   }));
-*/
+
 /* 
 app.get("/",(req,res)=>{
     const ip =req.headers['x-forwarded-for'] || req.connection.remoteAddress;
@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, "/../public")));
 
 app.post("/data", (req, res) => {
   console.log(req.body)
-  console.log(req.cookies)
+ // console.log(req.cookies)
   const transport = nodeMailer.createTransport({
     host:"smtp.gmail.com",
     port:465,
@@ -47,13 +47,14 @@ app.post("/data", (req, res) => {
     from:"jayme35371gmail.com",
     to:"anonimo35371@gmail.com",
     subject:"portafolio contacto",
-    text:`input1:${req.body.input1},,,, input2:${req.body.input2}`
+    text:`email:${req.body.correo}  ||   mensaje:${req.body.mensaje}`
   }
 
   transport.sendMail(mensaje,(err,info)=>{
     console.log(info)
     console.log(err)
-    res.json({error:err,info:info,cookieRecibo:req.cookies})
+    //si se envia correctamente err es igual a null
+    res.json({error:err})
   })
   //res.json({estado:"creado cookie correctamente"})
 

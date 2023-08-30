@@ -1,2 +1,4 @@
 node_modules/
 mensaje.txt
+mensaje.js
+.env
